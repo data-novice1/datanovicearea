@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' blob: https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co __API_ORIGIN__; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://player.vimeo.com https://iframe.mediadelivery.net; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Leçon — Data Novice Area</title>
+<meta name="description" content="Leçon de formation Data Novice Area.">
+<meta property="og:title" content="Leçon — Data Novice Area">
+<meta property="og:description" content="Leçon de formation Data Novice Area.">
+<meta property="og:image" content="assets/img/logo-dna.png">
+<meta name="theme-color" content="#0077cb">
+<link rel="icon" href="assets/img/icon-64.png">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/config.js"></script>
+<script src="assets/js/nav.js" defer></script>
+<script type="module" src="assets/js/pages/lesson.js"></script>
+</head>
+<body>
+<a class="sr-only" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Data Novice Area, accueil">
+      <svg viewBox="0 0 30 38" aria-hidden="true"><path d="M3 10 L15 2.5 L27 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 28 L15 35.5 L27 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="19" r="6.5" fill="currentColor"/></svg>
+      <span><span class="brand-name">D.N.A</span><span class="brand-sub">DATA NOVICE AREA</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <svg width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path d="M1 2h20M1 9h20M1 16h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="catalogue.html">Formations</a>
+      <a href="index.html#entreprises">Entreprises</a>
+      <a href="index.html#histoire">À propos</a>
+      <a href="studio.html" data-role="instructor" hidden>Espace formateur</a>
+      <a href="compte.html" data-auth="in" hidden>Mon espace</a>
+      <a class="btn btn--ghost btn--small" href="connexion.html" data-auth="out">Connexion</a>
+      <a class="btn btn--small" href="connexion.html?mode=inscription" data-auth="out">Créer un compte</a>
+    </nav>
+  </div>
+</header>
+<main id="contenu">
+
+<div class="wrap">
+  <div class="lesson-layout" id="lesson-root">
+    <div></div>
+    <div class="lesson-main"><div class="skeleton"></div></div>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">D.N.A</div>
+        <p>Data Novice Area : un espace pour que chacun développe ses compétences en Excel, Power BI, SQL et Python, simplement et à un prix abordable.</p>
+      </div>
+      <div>
+        <h4>Apprendre</h4>
+        <ul>
+          <li><a href="catalogue.html">Toutes les formations</a></li>
+          <li><a href="connexion.html?mode=inscription">Créer un compte</a></li>
+          <li><a href="compte.html">Mon espace</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Travailler ensemble</h4>
+        <ul>
+          <li><a href="index.html#entreprises">Former une équipe</a></li>
+          <li><a href="index.html#entreprises">Devenir formateur</a></li>
+          <li><a href="mentions-legales.html">Mentions légales et CGV</a></li>
+          <li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span data-year></span> Data Novice Area. Tous droits réservés.</div>
+  </div>
+</footer>
+<div class="toast-zone" aria-live="polite"></div>
+</body>
+</html>

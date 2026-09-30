@@ -1,0 +1,4 @@
+frontend/assets/js/config.js
+node_modules/
+.env
+.DS_Store

@@ -1,0 +1,49 @@
+name: Déployer le site sur GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths: ["frontend/**", "scripts/**", ".github/workflows/deploy-pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Les valeurs viennent de Settings > Secrets and variables > Actions.
+      # Rien n'est stocké dans le dépôt.
+      - name: Générer la configuration du site
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          API_URL: ${{ vars.API_URL }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          MOBILE_MONEY_INFO: ${{ vars.MOBILE_MONEY_INFO }}
+          BANK_TRANSFER_INFO: ${{ vars.BANK_TRANSFER_INFO }}
+        run: node scripts/build-config.mjs
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend
+      - id: deployment
+        uses: actions/deploy-pages@v4
